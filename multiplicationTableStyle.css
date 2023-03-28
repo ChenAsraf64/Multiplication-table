@@ -1,0 +1,76 @@
+table {
+  border-collapse: collapse;
+  border: 1px solid black;
+  text-align: center;
+}
+
+/*Color the first column, where td is column, and Color the first row, where tr is row*/
+td:first-child, tr:first-child {
+    background-color: #99ccff;
+    font-weight: bold;
+}
+
+/*Color the "x" cell in white.*/
+tr:nth-child(1) td:nth-child(1)
+{
+background-color: White;
+}
+
+/*Color diagonal cells*/ 
+tr:nth-child(2) td:nth-child(2), 
+tr:nth-child(3) td:nth-child(3),
+tr:nth-child(4) td:nth-child(4),
+tr:nth-child(5) td:nth-child(5), 
+tr:nth-child(6) td:nth-child(6), 
+tr:nth-child(7) td:nth-child(7),
+tr:nth-child(8) td:nth-child(8),
+tr:nth-child(9) td:nth-child(9),
+tr:nth-child(10) td:nth-child(10),
+tr:nth-child(11) td:nth-child(11) {
+    background-color: #99ccff;
+    font-weight: bold;
+}
+
+/* Set up table properties */
+.multiplication-table {
+  border-collapse: collapse;
+}
+
+/* Style table cells */
+.multiplication-table td {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+/* Remove border from first row and first column cells */
+.multiplication-table tr:first-child td,
+.multiplication-table td:first-child {
+  border: none;
+}
+
+/* Style span elements within cells */
+span {
+  position: relative;
+  display: inline-block;
+}
+
+/* Show tooltip on all cells except first row and first column */
+table.multiplication-table td:not(:first-child):not(:first-of-type):hover span::after {
+  content: attr(title);
+  background-color: black;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+  white-space: nowrap;
+}
+
+/* Disable pointer events on first row and first column cells */
+table.multiplication-table td:first-child,
+table.multiplication-table tr:first-child td {
+  pointer-events: none;
+}
